@@ -42,7 +42,7 @@ angular.module('songhop.services',[])
   	}
 
 	return o;
-});
+})
 
 //create factory to manage data between ctrlrs
 .factory('User', function() {
