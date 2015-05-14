@@ -59,15 +59,26 @@ angular.module('songhop', ['ionic', 'songhop.controllers'])
         }
       }
     })
+  // splash page
+  .state('splash', {
+    url: '/',
+    templateUrl: 'templates/splash.html',
+    controller: 'SplashCtrl',
+    onEnter: function($state, User){ //variable hasSession is true or false
+      User.checkSession().then(function(hasSession) {
+        if (hasSession) $state.go('tab.discover');
+      });
+    }
+  })
   // If none of the above states are matched, use this as the fallback:
-  $urlRouterProvider.otherwise('/tab/discover');
+  $urlRouterProvider.otherwise('/');
 
 })
 
 
 .constant('SERVER', {
   // Local server
-  // url: 'http://localhost:8100'
+  //url: 'http://localhost:8100' //didnt work for me
 
   // Public Heroku server
   url: 'https://ionic-songhop.herokuapp.com'

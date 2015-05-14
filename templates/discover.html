@@ -12,7 +12,7 @@
       </div>
 
       <div class="item">
-        <h2>{{ currentSong.title }}</h2>
+        <h2>{{ currentSong.title }}<span ng-hide="currentSong.loaded"><i class="ion-loading-c"></i></span></h2>
         <p>{{ currentSong.artist }}</p>
       </div>
 
@@ -29,6 +29,10 @@
 
     </div>
 
+      <!-- place an image in the web browser's cache -->
+    <div class="img-lookahead">
+      <img ng-src="{{ nextAlbumImg() }}" />
+    </div>
 
   </ion-content>
 </ion-view>
