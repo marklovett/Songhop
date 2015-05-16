@@ -103,8 +103,13 @@ Controller for the favorites page
      cancel: function() {
           // add cancel code..
         },
-     buttonClicked: function(index) {
-       return true;
+     buttonClicked: function(index) {       
+        switch (index) {
+            case 0 : window.location.href="http://twitter.com";
+                      return true;
+            case 1 : window.location.href="http://facebook.com";
+                      return true;
+        }
      }
    });
 
